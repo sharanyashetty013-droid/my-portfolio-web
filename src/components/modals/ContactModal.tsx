@@ -74,7 +74,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           </p>
         </div>
 
-        {/* 4 Verified Contact Buttons + Resume Download: DM Sans font, 14px gap, 16px 20px padding */}
+        {/* 4 Verified Contact Buttons: DM Sans font, 14px gap, 16px 20px padding */}
         <div className="space-y-[14px] mb-6 font-['DM_Sans',sans-serif]">
           {/* 1. Email */}
           <div className="flex items-center justify-between gap-3 px-5 py-4 rounded-xl bg-white/80 border border-teal-200/60 shadow-xs">
