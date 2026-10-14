@@ -122,25 +122,24 @@ export const ContactIsland: React.FC<ContactIslandProps> = ({
             <meshStandardMaterial color="#DC2626" flatShading />
           </mesh>
 
-          {/* Interactive Pill Tag (Light white card, small color dot, rounded-full, teal ring when selected/hovered) */}
-          {isActive && !isAnyModalOpen && (
-            <Html position={[0, 7.3, 0]} center distanceFactor={26} zIndexRange={[20, 0]}>
-              <div
-                onClick={() => onOpenContact()}
-                className="cursor-pointer select-none transition-transform duration-200 hover:scale-105"
-              >
-                <div className={`px-3.5 py-1.5 rounded-full flex items-center gap-2 whitespace-nowrap transition-all ${
-                  hovered
-                    ? 'bg-white text-slate-800 border border-teal-300 ring-2 ring-teal-400 shadow-md'
-                    : 'bg-white/90 text-slate-700 backdrop-blur-sm border border-slate-200/80 shadow-sm'
-                }`}>
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-400 shrink-0 shadow-xs" />
-                  <span className="text-xs font-bold">Contact Sharanya</span>
-                  <span className="text-[10px] text-teal-600 font-medium">  Click to open</span>
-                </div>
+          {/* Interactive Pill Tag */}
+          <Html position={[0, 7.3, 0]} center distanceFactor={26} zIndexRange={[20, 0]}>
+            <div
+              style={{ display: isActive && !isAnyModalOpen ? 'block' : 'none' }}
+              onClick={() => onOpenContact()}
+              className="cursor-pointer select-none transition-transform duration-200 hover:scale-105"
+            >
+              <div className={`px-3.5 py-1.5 rounded-full flex items-center gap-2 whitespace-nowrap transition-all ${
+                hovered
+                  ? 'bg-white text-slate-800 border border-teal-300 ring-2 ring-teal-400 shadow-md'
+                  : 'bg-white/90 text-slate-700 backdrop-blur-sm border border-slate-200/80 shadow-sm'
+              }`}>
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400 shrink-0 shadow-xs" />
+                <span className="text-xs font-bold">Contact Sharanya</span>
+                <span className="text-[10px] text-teal-600 font-medium">  Click to open</span>
               </div>
-            </Html>
-          )}
+            </div>
+          </Html>
         </group>
 
         {/* Wooden Mailbox (Clickable) */}

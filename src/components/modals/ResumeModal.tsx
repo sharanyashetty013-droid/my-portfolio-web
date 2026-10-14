@@ -15,13 +15,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       onClick={onClose}
     >
       <div 
-        className="bg-[#FFF8EC] rounded-2xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-xl border border-amber-200/70 overflow-hidden relative font-['DM_Sans',sans-serif]"
+        className="bg-[#FFF8EC] rounded-2xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-xl border border-amber-200/70 overflow-hidden relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
         <div className="px-6 py-4 border-b border-amber-200/60 bg-amber-50/70 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <h3 className="font-bold text-slate-900 text-[20px] font-['Space_Grotesk']">Curriculum Vitae</h3>
+            <h3 className="font-bold text-slate-900 text-[20px]">Curriculum Vitae</h3>
             <span className="text-[14px] text-[#475569] font-medium">• 1-Page Document</span>
           </div>
           <button
@@ -37,7 +37,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         <div className="p-6 sm:p-8 overflow-y-auto space-y-[28px] text-slate-800 text-[16px]">
           {/* Resume Header */}
           <div className="border-b border-amber-200/60 pb-5">
-            <h1 className="text-[34px] font-bold text-slate-900 tracking-tight leading-tight font-['Space_Grotesk']">
+            <h1 className="text-[34px] font-bold text-slate-900 tracking-tight leading-tight">
               SHARANYA L SHETTY
             </h1>
             <p className="text-[16px] text-[#475569] font-medium mt-1.5 leading-normal">
@@ -67,7 +67,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 1. Profile */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               PROFILE
             </h2>
             <p className="text-slate-800 leading-[1.6] text-[16px]">
@@ -77,7 +77,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 2. Education */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               EDUCATION
             </h2>
             <div className="space-y-3.5">
@@ -105,7 +105,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 3. Leadership & Campus Involvement */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               LEADERSHIP & CAMPUS INVOLVEMENT
             </h2>
             <ul className="space-y-2 text-[16px] leading-[1.6] text-slate-700">
@@ -126,7 +126,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 4. Experience */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               EXPERIENCE
             </h2>
             <ul className="space-y-2 text-[16px] leading-[1.6] text-slate-700">
@@ -143,7 +143,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 5. Certifications */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               CERTIFICATIONS
             </h2>
             <ul className="space-y-1.5 text-[16px] leading-[1.6] text-slate-700">
@@ -160,7 +160,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 6. Achievements & Awards */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               ACHIEVEMENTS & AWARDS
             </h2>
             <ul className="space-y-2 text-[16px] leading-[1.6] text-slate-700">
@@ -185,7 +185,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* 7. Core Skills */}
           <section>
-            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1 font-['Space_Grotesk']">
+            <h2 className="text-[14px] font-bold text-teal-800 uppercase tracking-[0.08em] mb-2.5 border-b border-amber-200/50 pb-1">
               CORE SKILLS
             </h2>
             <p className="text-slate-700 leading-[1.6] text-[16px]">

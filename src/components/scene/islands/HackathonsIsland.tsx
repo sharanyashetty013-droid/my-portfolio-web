@@ -15,14 +15,14 @@ interface HackathonsIslandProps {
   reducedMotion?: boolean;
 }
 
-// Concise labels and staggered heights to eliminate any 2D overlap
+// Ultra-concise labels and distinct tiered heights to eliminate all visual overlap and merging
 const HACKATHON_META: Record<string, { shortName: string; tagHeight: number }> = {
-  'sih-2026': { shortName: "SIH '26", tagHeight: 2.1 },
-  'infinity-hacks': { shortName: 'Infinity Hacks', tagHeight: 1.3 },
-  'ibm-z-datathon': { shortName: 'IBM Z Datathon', tagHeight: 1.3 },
-  'mst-buildathon': { shortName: 'MST Buildathon', tagHeight: 1.2 },
-  'boss-battle': { shortName: 'Boss Battle', tagHeight: 2.3 },
-  'inceptio-hackathon': { shortName: 'Inceptio', tagHeight: 2.5 },
+  'mst-buildathon': { shortName: 'MST Build', tagHeight: 1.0 },
+  'infinity-hacks': { shortName: 'Infinity', tagHeight: 2.1 },
+  'inceptio-hackathon': { shortName: 'Inceptio', tagHeight: 2.9 },
+  'ibm-z-datathon': { shortName: 'IBM Z', tagHeight: 1.15 },
+  'boss-battle': { shortName: 'Boss Battle', tagHeight: 2.35 },
+  'sih-2026': { shortName: "SIH '26", tagHeight: 2.0 },
 };
 
 const HackathonPodium: React.FC<{
@@ -123,39 +123,38 @@ const HackathonPodium: React.FC<{
       </group>
 
       {/* Non-overlapping Staggered Interactive Pill Tag */}
-      {isActive && !isAnyModalOpen && (
-        <Html
-          position={[0, tagPosY, 0]}
-          center
-          distanceFactor={30}
-          zIndexRange={[hovered ? 60 : 20, 0]}
+      <Html
+        position={[0, tagPosY, 0]}
+        center
+        distanceFactor={30}
+        zIndexRange={[hovered ? 60 : 20, 0]}
+      >
+        <div
+          style={{ display: isActive && !isAnyModalOpen ? 'block' : 'none' }}
+          onClick={() => onSelect(hackathon)}
+          className="cursor-pointer select-none transition-transform duration-200"
         >
-          <div
-            onClick={() => onSelect(hackathon)}
-            className="cursor-pointer select-none transition-transform duration-200"
-          >
-            <div className={`px-2.5 py-1 rounded-full flex items-center gap-1.5 whitespace-nowrap transition-all ${
-              hovered
-                ? 'bg-white text-slate-900 border border-teal-300 ring-2 ring-teal-400 shadow-xl scale-105 z-50'
-                : 'bg-white/95 text-slate-700 backdrop-blur-xs border border-slate-200/90 shadow-sm hover:border-slate-300'
-            }`}>
-              <span
-                className={`w-2 h-2 rounded-full shrink-0 shadow-xs ${
-                  isInternalFinals ? 'bg-blue-500' : 'bg-teal-500'
-                }`}
-              />
-              <span className="text-xs font-bold tracking-tight">
-                {hovered ? hackathon.name : meta.shortName}
+          <div className={`px-2.5 py-1 rounded-full flex items-center gap-1.5 whitespace-nowrap transition-all ${
+            hovered
+              ? 'bg-white text-slate-900 border border-teal-300 ring-2 ring-teal-400 shadow-xl scale-105 z-50'
+              : 'bg-white/95 text-slate-700 backdrop-blur-xs border border-slate-200/90 shadow-sm hover:border-slate-300'
+          }`}>
+            <span
+              className={`w-2 h-2 rounded-full shrink-0 shadow-xs ${
+                isInternalFinals ? 'bg-blue-500' : 'bg-teal-500'
+              }`}
+            />
+            <span className="text-xs font-bold tracking-tight">
+              {hovered ? hackathon.name : meta.shortName}
+            </span>
+            {hovered && (
+              <span className="text-[10px] text-teal-600 font-medium pl-1.5 border-l border-slate-200">
+                {hackathon.badge}
               </span>
-              {hovered && (
-                <span className="text-[10px] text-teal-600 font-medium pl-1.5 border-l border-slate-200">
-                  {hackathon.badge}
-                </span>
-              )}
-            </div>
+            )}
           </div>
-        </Html>
-      )}
+        </div>
+      </Html>
     </group>
   );
 };

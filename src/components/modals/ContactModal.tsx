@@ -61,21 +61,21 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header: Space Grotesk only for title and section label */}
+        {/* Header */}
         <div className="mb-6">
-          <span className="text-[14px] font-semibold text-[#1AA6A6] uppercase tracking-wider font-['Space_Grotesk']">
+          <span className="text-[14px] font-semibold text-[#1AA6A6] uppercase tracking-wider">
             VERIFIED CHANNELS
           </span>
-          <h2 className="text-[32px] font-bold text-slate-900 tracking-tight mt-1 leading-tight font-['Space_Grotesk']">
+          <h2 className="text-[32px] font-bold text-slate-900 tracking-tight mt-1 leading-tight">
             Connect with Sharanya
           </h2>
-          <p className="text-[16px] text-[#475569] mt-1.5 leading-normal font-['DM_Sans',sans-serif]">
+          <p className="text-[16px] text-[#475569] mt-1.5 leading-normal">
             Backend & blockchain development, smart contracts, and hackathons.
           </p>
         </div>
 
-        {/* 4 Verified Contact Buttons: DM Sans font, 14px gap, 16px 20px padding */}
-        <div className="space-y-[14px] mb-6 font-['DM_Sans',sans-serif]">
+        {/* 4 Verified Contact Buttons: 14px gap, 16px 20px padding */}
+        <div className="space-y-[14px] mb-6">
           {/* 1. Email */}
           <div className="flex items-center justify-between gap-3 px-5 py-4 rounded-xl bg-white/80 border border-teal-200/60 shadow-xs">
             <a
@@ -168,8 +168,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
         </div>
 
-        {/* Quick Note Form: 48px inputs, min 110px textarea, DM Sans font */}
-        <form onSubmit={handleSubmit} className="border-t border-amber-200/50 pt-5 space-y-3 font-['DM_Sans',sans-serif]">
+        {/* Quick Note Form: 48px inputs, min 110px textarea */}
+        <form onSubmit={handleSubmit} className="border-t border-amber-200/50 pt-5 space-y-3">
           <div className="text-[16px] font-semibold text-slate-900">Or send a quick message:</div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

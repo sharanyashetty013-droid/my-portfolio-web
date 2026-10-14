@@ -115,36 +115,35 @@ const ProjectCabin: React.FC<{
       )}
 
       {/* Interactive Pill Tag (Compact & non-overlapping) */}
-      {isActive && !isAnyModalOpen && (
-        <Html
-          position={[0, project.slotPosition[2] < 0 ? 2.95 : project.slotPosition[2] > 3 ? 3.45 : 3.2, 0]}
-          center
-          distanceFactor={30}
-          zIndexRange={[hovered ? 60 : 20, 0]}
+      <Html
+        position={[0, project.slotPosition[2] < 0 ? 2.95 : project.slotPosition[2] > 3 ? 3.45 : 3.2, 0]}
+        center
+        distanceFactor={30}
+        zIndexRange={[hovered ? 60 : 20, 0]}
+      >
+        <div
+          style={{ display: isActive && !isAnyModalOpen ? 'block' : 'none' }}
+          onClick={() => onSelect(project)}
+          className="cursor-pointer select-none transition-transform duration-200"
         >
-          <div
-            onClick={() => onSelect(project)}
-            className="cursor-pointer select-none transition-transform duration-200"
-          >
-            <div className={`px-2.5 py-1 rounded-full flex items-center gap-1.5 whitespace-nowrap transition-all ${
-              hovered
-                ? 'bg-white text-slate-900 border border-teal-300 ring-2 ring-teal-400 shadow-xl scale-105 z-50'
-                : 'bg-white/95 text-slate-700 backdrop-blur-xs border border-slate-200/90 shadow-sm'
-            }`}>
-              <span
-                className="w-2 h-2 rounded-full shrink-0 shadow-xs"
-                style={{ backgroundColor: project.buildingColor }}
-              />
-              <span className="text-xs font-bold tracking-tight">{project.title}</span>
-              {hovered && (
-                <span className="text-[10px] text-teal-600 font-medium pl-1.5 border-l border-slate-200">
-                  {project.tags.slice(0, 2).join(', ')}
-                </span>
-              )}
-            </div>
+          <div className={`px-2.5 py-1 rounded-full flex items-center gap-1.5 whitespace-nowrap transition-all ${
+            hovered
+              ? 'bg-white text-slate-900 border border-teal-300 ring-2 ring-teal-400 shadow-xl scale-105 z-50'
+              : 'bg-white/95 text-slate-700 backdrop-blur-xs border border-slate-200/90 shadow-sm'
+          }`}>
+            <span
+              className="w-2 h-2 rounded-full shrink-0 shadow-xs"
+              style={{ backgroundColor: project.buildingColor }}
+            />
+            <span className="text-xs font-bold tracking-tight">{project.title}</span>
+            {hovered && (
+              <span className="text-[10px] text-teal-600 font-medium pl-1.5 border-l border-slate-200">
+                {project.tags.slice(0, 2).join(', ')}
+              </span>
+            )}
           </div>
-        </Html>
-      )}
+        </div>
+      </Html>
     </group>
   );
 };
